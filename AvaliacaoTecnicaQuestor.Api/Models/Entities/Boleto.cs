@@ -1,4 +1,4 @@
-﻿namespace AvaliacaoTecnicaQuestor.Api.Models
+﻿namespace AvaliacaoTecnicaQuestor.Api.Models.Entities
 {
     public class Boleto
     {

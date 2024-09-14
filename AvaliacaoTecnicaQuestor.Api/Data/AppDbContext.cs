@@ -1,4 +1,4 @@
-﻿using AvaliacaoTecnicaQuestor.Api.Models;
+﻿using AvaliacaoTecnicaQuestor.Api.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AvaliacaoTecnicaQuestor.Api.Data
@@ -25,6 +25,10 @@ namespace AvaliacaoTecnicaQuestor.Api.Data
                 .HasKey(b => b.Id);
 
             modelBuilder.Entity<Banco>()
+                .Property(b => b.Id)
+                .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Banco>()
                 .Property(b => b.Nome)
                 .IsRequired()
                 .HasMaxLength(50);
@@ -35,6 +39,10 @@ namespace AvaliacaoTecnicaQuestor.Api.Data
                 .HasMaxLength(10);
 
             modelBuilder.Entity<Banco>()
+                .HasIndex(b => b.Codigo)
+                .IsUnique();
+
+            modelBuilder.Entity<Banco>()
                 .Property(b => b.PercentualJuros)
                 .IsRequired();
         }
@@ -43,6 +51,10 @@ namespace AvaliacaoTecnicaQuestor.Api.Data
         {
             modelBuilder.Entity<Boleto>()
                 .HasKey(b => b.Id);
+
+            modelBuilder.Entity<Boleto>()
+                .Property(b => b.Id)
+                .ValueGeneratedOnAdd();
 
             modelBuilder.Entity<Boleto>()
                 .Property(b => b.NomePagador)
@@ -78,8 +90,7 @@ namespace AvaliacaoTecnicaQuestor.Api.Data
                 .IsRequired(false);
 
             modelBuilder.Entity<Boleto>()
-                .HasOne(boleto => boleto.Banco)
-                .WithMany(banco => banco.Boletos);
+                .HasOne(boleto => boleto.Banco);
         }
     }
 }
