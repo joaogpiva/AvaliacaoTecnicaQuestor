@@ -10,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IBancoRepository, BancoRepository>();
 builder.Services.AddScoped<IBancoService, BancoService>();
 
+builder.Services.AddScoped<IBoletoRepository, BoletoRepository>();
+builder.Services.AddScoped<IBoletoService, BoletoService>();
+
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 builder.Services.AddControllers();

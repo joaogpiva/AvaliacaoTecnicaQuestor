@@ -28,6 +28,11 @@ namespace AvaliacaoTecnicaQuestor.Api.Services
             return await _bancoRepository.GetBancoByCodigoAsync(codigo);
         }
 
+        public async Task<Banco?> GetBancoByIdAsync(long id)
+        {
+            return await _bancoRepository.GetBancoByIdAsync(id);
+        }
+
         public async Task<Banco> PostBancoAsync(BancoDTO bancoDTO)
         {
             var banco = _mapper.Map<Banco>(bancoDTO);

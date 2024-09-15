@@ -90,7 +90,9 @@ namespace AvaliacaoTecnicaQuestor.Api.Data
                 .IsRequired(false);
 
             modelBuilder.Entity<Boleto>()
-                .HasOne(boleto => boleto.Banco);
+                .HasOne(boleto => boleto.Banco)
+                .WithOne()
+                .HasForeignKey<Boleto>(boleto => boleto.BancoId);
         }
     }
 }

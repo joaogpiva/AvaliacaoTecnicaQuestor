@@ -48,7 +48,7 @@ namespace AvaliacaoTecnicaQuestor.Api.Migrations
                     b.HasIndex("Codigo")
                         .IsUnique();
 
-                    b.ToTable("Bancos");
+                    b.ToTable("Bancos", (string)null);
                 });
 
             modelBuilder.Entity("AvaliacaoTecnicaQuestor.Api.Models.Entities.Boleto", b =>
@@ -96,7 +96,7 @@ namespace AvaliacaoTecnicaQuestor.Api.Migrations
 
                     b.HasIndex("BancoId");
 
-                    b.ToTable("Boletos");
+                    b.ToTable("Boletos", (string)null);
                 });
 
             modelBuilder.Entity("AvaliacaoTecnicaQuestor.Api.Models.Entities.Boleto", b =>

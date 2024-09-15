@@ -10,6 +10,9 @@ namespace AvaliacaoTecnicaQuestor.Api.Mappings
         {
             CreateMap<Banco, BancoDTO>();
             CreateMap<BancoDTO, Banco>();
+
+            CreateMap<Boleto, BoletoDTO>();
+            CreateMap<BoletoDTO, Boleto>();
         }
     }
 }

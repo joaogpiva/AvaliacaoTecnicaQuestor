@@ -7,6 +7,7 @@ namespace AvaliacaoTecnicaQuestor.Api.Services
     {
         Task<List<Banco>> GetBancosAsync();
         Task<Banco?> GetBancoByCodigoAsync(string codigo);
+        Task<Banco?> GetBancoByIdAsync(long id);
         Task<Banco> PostBancoAsync(BancoDTO bancoDTO);
     }
 }

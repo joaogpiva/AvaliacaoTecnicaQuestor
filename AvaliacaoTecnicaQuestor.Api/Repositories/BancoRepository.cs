@@ -23,6 +23,11 @@ namespace AvaliacaoTecnicaQuestor.Api.Repositories
             return await _context.Bancos.Where(b => b.Codigo == codigo).FirstOrDefaultAsync();
         }
 
+        public async Task<Banco?> GetBancoByIdAsync(long id)
+        {
+            return await _context.Bancos.FindAsync(id);
+        }
+
         public async Task<Banco> CreateBancoAsync(Banco banco)
         {
             await _context.Bancos.AddAsync(banco);

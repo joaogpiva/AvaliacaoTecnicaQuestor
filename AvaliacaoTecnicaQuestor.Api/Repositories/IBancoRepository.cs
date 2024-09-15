@@ -6,6 +6,7 @@ namespace AvaliacaoTecnicaQuestor.Api.Repositories
     {
         Task<List<Banco>> GetBancosAsync();
         Task<Banco?> GetBancoByCodigoAsync(string codigo);
+        Task<Banco?> GetBancoByIdAsync(long id);
         Task<Banco> CreateBancoAsync(Banco banco);
     }
 }
